@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Shield, Upload, Zap, Users, CheckCircle, Star, ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import heroImage from '@/assets/hero-image.jpg';
 
@@ -76,8 +77,12 @@ const Index = () => {
             <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors link-animated">About</a>
           </div>
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" className="btn-ghost-hero">Sign In</Button>
-            <Button className="btn-hero">Get Started</Button>
+            <Button variant="ghost" className="btn-ghost-hero" asChild>
+              <Link to="/auth">Sign In</Link>
+            </Button>
+            <Button className="btn-hero" asChild>
+              <Link to="/auth">Get Started</Link>
+            </Button>
           </div>
         </div>
       </nav>
@@ -104,8 +109,8 @@ const Index = () => {
                 Analyze images, videos, and audio with 99.2% accuracy in seconds.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button className="btn-hero text-lg px-8 py-6">
-                  Start Free Analysis <ArrowRight className="ml-2 h-5 w-5" />
+                <Button className="btn-hero text-lg px-8 py-6" asChild>
+                  <Link to="/auth">Start Free Analysis <ArrowRight className="ml-2 h-5 w-5" /></Link>
                 </Button>
                 <Button variant="outline" className="btn-ghost-hero text-lg px-8 py-6">
                   <Play className="mr-2 h-5 w-5" /> Watch Demo
@@ -234,8 +239,8 @@ const Index = () => {
             Start analyzing your media files today with 50 free detections per month
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button className="btn-hero text-lg px-8 py-6">
-              Start Free Analysis <ArrowRight className="ml-2 h-5 w-5" />
+            <Button className="btn-hero text-lg px-8 py-6" asChild>
+              <Link to="/auth">Start Free Analysis <ArrowRight className="ml-2 h-5 w-5" /></Link>
             </Button>
             <Button variant="outline" className="btn-ghost-hero text-lg px-8 py-6">
               View Documentation
